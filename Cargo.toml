@@ -12,8 +12,7 @@ readme = "README.md"
 keywords = [
     "red-black-tree",
     "tree",
-    "data-structures",
-    "algorithms",
+    "data-structure",
     "ordered",
     "bst",
 ]
