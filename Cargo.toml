@@ -1,0 +1,40 @@
+[package]
+name = "rbtree_extended"
+version = "0.1.0"
+edition = "2024"
+authors = ["Evgenii Yaroshenko <yaroshjeka@gmail.com>"]
+description = "A generic Red-Black Tree with traversal, range queries and Graphviz DOT export"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/jekahome/rbtree_extended"
+documentation = "https://docs.rs/rbtree_extended"
+readme = "README.md"
+
+keywords = [
+    "red-black-tree",
+    "tree",
+    "data-structures",
+    "algorithms",
+    "ordered",
+    "bst",
+]
+
+categories = [
+    "data-structures",
+    "algorithms",
+]
+
+exclude = [
+    "docs/",
+]
+
+[dependencies]
+
+
+[features]
+default = ["in-order", "reverse-in-order", "pre-order", "post-order", "bfs"]
+
+in-order = []
+reverse-in-order = []
+pre-order = []
+post-order = []
+bfs = []
