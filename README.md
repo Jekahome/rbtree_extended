@@ -2,6 +2,12 @@
 
 `rbtree_extended` is an extended Red-Black Tree implementation written in Rust.
 
+[![CI](https://github.com/YOUR_GITHUB_USERNAME/rbtree-extended/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_GITHUB_USERNAME/rbtree-extended/actions/workflows/ci.yml)
+[![release](https://img.shields.io/github/v/release/YOUR_GITHUB_USERNAME/rbtree-extended?sort=semver)](https://github.com/YOUR_GITHUB_USERNAME/rbtree-extended/releases)
+[![crates.io](https://img.shields.io/crates/v/rbtree_extended.svg)](https://crates.io/crates/rbtree_extended)
+[![docs.rs](https://docs.rs/rbtree_extended/badge.svg)](https://docs.rs/rbtree_extended)
+[![license](https://img.shields.io/badge/license-MIT%20OR%20Apache--2.0-blue)](LICENSE-MIT)
+
 A Red-Black Tree is a self-balancing binary search tree that keeps search, insertion, and removal operations efficient even as the tree grows.
 
 This crate provides the usual ordered-tree operations together with traversal iterators, range queries, bounds, value replacement, filtering, and ordered extraction.
@@ -190,7 +196,7 @@ println!("{dot}");
 The resulting string can be rendered by Graphviz or pasted into an [online
 DOT viewer](https://dreampuf.github.io/GraphvizOnline/).
 
-![Red-Black Tree example](https://github.com/Jekahome/rbtree-extended/blob/main/docs/rbtree-example.svg)
+![Red-Black Tree example](https://github.com/Jekahome/rbtree_extended/blob/main/docs/rbtree-example.svg)
 
 
 A generated graph contains both the tree connections and the Red-Black

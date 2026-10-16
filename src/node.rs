@@ -79,19 +79,17 @@ impl<T: Default> Node<T> {
     /// Ownership of these allocations is transferred to the tree and later
     /// recovered when the tree releases its nodes.
     pub(crate) fn new_fixed_head(value: T) -> Link<T> {
+        let fixed_head = Box::into_non_null(Box::new(Self {
+            left: None,
+            right: None,
+            parent: None,
+            is_red: false,
+            value: T::default(),
+        }));
         unsafe {
-            let fixed_head = NonNull::new_unchecked(Box::into_raw(Box::new(Self {
-                left: None,
-                right: None,
-                parent: None,
-                is_red: false,
-                value: T::default(),
-            })));
-
             (*fixed_head.as_ptr()).left = Node::new_black(value);
-
-            Some(fixed_head)
         }
+        Some(fixed_head)
     }
 }
 
@@ -107,17 +105,15 @@ impl<T> Node<T> {
     /// The allocation becomes owned by the tree and must eventually be
     /// released by the tree implementation.
     pub(crate) fn new_black(value: T) -> Link<T> {
-        unsafe {
-            let new = NonNull::new_unchecked(Box::into_raw(Box::new(Self {
-                left: None,
-                right: None,
-                parent: None,
-                is_red: false,
-                value,
-            })));
+        let new = Box::into_non_null(Box::new(Self {
+            left: None,
+            right: None,
+            parent: None,
+            is_red: false,
+            value,
+        }));
 
-            Some(new)
-        }
+        Some(new)
     }
 
     /// Allocates a new red node with the specified parent.
@@ -140,16 +136,14 @@ impl<T> Node<T> {
     /// The allocation becomes owned by the tree and must eventually be
     /// released by the tree implementation.
     pub(crate) fn new_red(value: T, parent: NonNull<Node<T>>) -> Link<T> {
-        unsafe {
-            let new = NonNull::new_unchecked(Box::into_raw(Box::new(Self {
-                left: None,
-                right: None,
-                parent: Some(parent),
-                is_red: true,
-                value,
-            })));
+        let new = Box::into_non_null(Box::new(Self {
+            left: None,
+            right: None,
+            parent: Some(parent),
+            is_red: true,
+            value,
+        }));
 
-            Some(new)
-        }
+        Some(new)
     }
 }

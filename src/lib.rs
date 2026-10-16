@@ -667,7 +667,7 @@
 //! The resulting string can be rendered by Graphviz or pasted into an [online
 //! DOT viewer](https://dreampuf.github.io/GraphvizOnline/).
 //!
-//! ![Red-Black Tree example](https://github.com/Jekahome/rbtree-extended/blob/main/docs/rbtree-example.svg)
+//! ![Red-Black Tree example](https://github.com/Jekahome/rbtree_extended/blob/main/docs/rbtree-example.svg)
 //!
 //!
 //! A generated graph contains both the tree connections and the Red-Black
